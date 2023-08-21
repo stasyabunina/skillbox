@@ -1,0 +1,53 @@
+.header {
+  padding-top: 29px;
+  padding-bottom: 24px;
+  background-color: #3F2AFF;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__svg {
+    width: 94px;
+    height: 21px;
+  }
+
+  &__nav {
+    max-width: 850px;
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+
+  &__close-btn {
+    width: 30px;
+    height: 30px;
+    display: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 57px;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+    color: white;
+  }
+}
+
+.burger {
+  display: none;
+}
