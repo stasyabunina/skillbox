@@ -12,9 +12,10 @@ const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const sass = require('gulp-sass')(require('sass'));
+const pug = require('gulp-pug');
 
 const clean = () => {
-	return del(['dist'])
+  return del(['dist'])
 }
 
 const styles = () => {
@@ -32,7 +33,8 @@ const styles = () => {
 };
 
 const htmlMinify = () => {
-  return src('src/**/*.html')
+  return src('src/views/*.pug')
+    .pipe(pug({ pretty: true }))
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
@@ -82,7 +84,7 @@ const images = () => {
   ])
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 90, progressive: true }),
-      imagemin.optipng({optimizationLevel: 2}),
+      imagemin.optipng({ optimizationLevel: 2 }),
     ]))
     .pipe(dest('dist/img'))
 }
@@ -100,7 +102,7 @@ const watchFiles = () => {
   });
 
   watch('src/sass/**/*.scss', styles);
-  watch('src/*.html', htmlMinify);
+  watch('src/**/*.pug', htmlMinify);
   watch('src/img/*.{jpg,jpeg,png}', images);
   watch('src/img/**/*.{jpg,jpeg,png}', images);
   watch('src/img/*.svg', svg);
@@ -115,3 +117,4 @@ exports.scripts = scripts;
 exports.htmlMinify = htmlMinify;
 
 exports.default = series(clean, scripts, styles, resources, images, svg, svgSprites, htmlMinify, watchFiles);
+exports.build = series(clean, scripts, styles, resources, images, svg, svgSprites, htmlMinify);

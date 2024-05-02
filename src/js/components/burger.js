@@ -1,27 +1,16 @@
-let burger = document.querySelector('.burger');
-let menu = document.querySelector('.header__nav');
-let menuLinks = menu.querySelectorAll('.nav__link');
-let closeNav = document.querySelector('.nav__close-btn');
+$('.burger').click(() => {
+  $('.header__nav').toggleClass('header__nav--active');
+  $(document.body).toggleClass('stop-scroll');
+})
 
-burger.addEventListener('click',
+$('.nav__close-btn').click(() => {
+  $('.header__nav').removeClass('header__nav--active');
+  $(document.body).removeClass('stop-scroll');
+})
 
-  function () {
-
-    menu.classList.toggle('header__nav--active');
-
-    document.body.classList.toggle('stop-scroll');
-  });
-
-menuLinks.forEach(function (el) {
-  el.addEventListener('click', function () {
-
-    menu.classList.remove('header__nav--active');
-
-    document.body.classList.remove('stop-scroll');
+$('.nav__link').each(function (index, value) {
+  $(this).click(() => {
+    $('.header__nav').removeClass('header__nav--active');
+    $(document.body).removeClass('stop-scroll');
   })
-});
-
-closeNav.addEventListener('click', function () {
-  menu.classList.remove('header__nav--active');
-  document.body.classList.remove('stop-scroll');
-});
+})

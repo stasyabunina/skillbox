@@ -1,13 +1,7 @@
 .header {
   padding-top: 29px;
   padding-bottom: 24px;
-  background-color: #3F2AFF;
-
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+  background-color: $primary;
 
   &__svg {
     width: 94px;
@@ -20,14 +14,6 @@
 }
 
 .nav {
-  &__list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-  }
-
   &__close-btn {
     width: 30px;
     height: 30px;

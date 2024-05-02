@@ -45,11 +45,6 @@
   .benefits {
     padding: 80px 0 76px 0;
 
-    &__card {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
     &__svg {
       margin-right: 0;
       margin-bottom: 12px;
@@ -84,11 +79,6 @@
 
   .header {
     padding-bottom: 28px;
-
-    &__wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
 
     &__logo {
       margin-bottom: 24px;
@@ -131,10 +121,6 @@
 
   .courses {
     padding: 75px 0 79px 0;
-
-    &__card {
-      align-items: center;
-    }
   }
 
   .course {
@@ -187,10 +173,6 @@
         visibility: visible;
         transform: none;
       }
-    }
-
-    &__wrapper {
-      flex-direction: row;
     }
 
     &__logo {
@@ -300,11 +282,6 @@
       line-height: 26px;
     }
 
-    &__card {
-      flex-direction: row;
-      align-items: center;
-    }
-
     &__svg {
       margin-right: 30px;
       margin-bottom: 0;
@@ -348,7 +325,6 @@
 
     &__card {
       min-height: 653px;
-      align-items: flex-start;
     }
   }
 

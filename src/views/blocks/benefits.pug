@@ -1,0 +1,21 @@
+section.benefits
+  .container
+    .benefits__content
+      h2.benefits__title.font-weight-bold Преимущества обучения в&nbsp;skillbox
+      p.benefits__desc Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут рассмотрены исключительно в&nbsp;разрезе маркетинговых предпосылок.
+    ul.row
+      - const benefits = ['Результат вашего обучения является самым важным для нас приоритетом', 'Лично познакомитесь с&nbsp;одним из&nbsp;своих будущих преподавателей', 'Значимость этих проблем очевидна, поэтому стоит всегда быть внимательным']
+      each benefit, index in benefits
+        li.benefits__item.col-xl-4.col-md-4.col-sm-4.col-xs-12
+          .d-flex.flex-lg-row.align-items-lg-center.flex-sm-column.align-items-sm-start.flex-xs-row.align-items-xs-center.benefits__card
+            case index
+              when 0
+                svg.benefits__svg
+                  use(xlink:href='img/sprite.svg#benefit-one')
+              when 1
+                svg.benefits__svg
+                  use(xlink:href='img/sprite.svg#benefit-two')
+              when 2
+                svg.benefits__svg
+                  use(xlink:href='img/sprite.svg#benefit-three')
+            p.benefits__paragraph.font-weight-bold!=benefit

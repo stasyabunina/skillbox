@@ -1,0 +1,53 @@
+section#courses.courses
+  .container
+    h2.courses__title.font-weight-bold Курсы
+    ul.row.gy-4.courses__row
+      -
+        const courses = [
+          {img: {
+            name: 'courses-one',
+            alt: 'Cinema 4d для начинающих'
+          },
+          hours: 60,
+          title: 'Cinema 4d&nbsp;для начинающих',
+          description: 'Учитывая ключевые сценарии поведения, базовый вектор развития напрямую зависит от&nbsp;системы массового участия. Следует отметить, что сложившаяся структура организации напрямую зависит от&nbsp;стандартных подходов.'},
+          {img: {
+            name: 'courses-two',
+            alt: 'Blender: продвинутый уровень'
+          },
+          hours: 60,
+          title: 'Blender: продвинутый уровень',
+          description: 'Но&nbsp;убеждённость некоторых оппонентов в&nbsp;значительной степени обусловливает важность форм воздействия. Внезапно, тщательные исследования конкурентов представлены.'},
+          {img: {
+            name: 'courses-three',
+            alt: 'Визуализация в 3ds Max'
+          },
+          hours: 60,
+          title: 'Визуализация в&nbsp;3ds Max',
+          description: 'Повседневная практика показывает, что сложившаяся структура организации обеспечивает актуальность кластеризации усилий.'},
+          {img: {
+            name: 'courses-four',
+            alt: 'Скульптинг в ZBrush'
+          },
+          hours: 60,
+          title: 'Скульптинг в&nbsp;ZBrush',
+          description: 'Разнообразный и&nbsp;богатый опыт говорит нам, что граница обучения кадров требует определения и&nbsp;уточнения прогресса профессионального сообщества! В&nbsp;частности, постоянный количественный рост и&nbsp;сфера нашей активности.'},
+        ];
+      each course in courses
+        li.col-xl-6.col-md-6.col-sm-6.col-xs-12.d-flex
+          article.position-relative.d-flex.flex-column.justify-content-start.align-items-start.align-items-md-center.courses__card.course.course-first
+            span.position-absolute.font-weight-normal.course__time
+              svg.align-middle.course__svg
+                use(xlink:href='img/sprite.svg#time')
+              | #{course.hours} часов
+            picture.d-flex.w-100.course__preview
+              source(srcset=`img/${course.img.name}-320.jpg`, media='(max-width: 575.98px)')
+              source(srcset=`img/${course.img.name}-576.jpg`, media='(max-width: 767.98px)')
+              source(srcset=`img/${course.img.name}-768.jpg`, media='(max-width: 1199.98px)')
+              img.object-fit-contain.w-100(src=`img/${course.img.name}.jpg`, alt=course.img.alt)
+            .d-flex.flex-column.align-items-start.justify-content-between.flex-grow-1.course__content
+              .course__info
+                h3.font-weight-bold.course__title!=course.title
+                p.course__desc!=course.description
+              button.font-weight-bold.course__btn.btn Подробнее
+

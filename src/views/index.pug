@@ -1,0 +1,18 @@
+extends layouts/default
+
+block variables
+  - const title = 'Skillbox'
+
+block content
+  include blocks/header
+  main.main
+    include blocks/hero
+    include blocks/benefits
+    include blocks/instructors
+    include blocks/courses
+  include blocks/footer
+
+block scripts
+  script(src='https://code.jquery.com/jquery-3.7.1.min.js', integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=', crossorigin='anonymous')
+  script(src='libs/bootstrap.bundle.min.js')
+  script(src='js/script.js')

@@ -6,23 +6,14 @@
   background-repeat: no-repeat;
 
   &__title {
-    margin: 0;
     margin-bottom: 27px;
-    font-weight: 700;
     font-size: 60px;
     line-height: 60px;
     color: white;
   }
 
-  &__col {
-    display: flex;
-    justify-content: center;
-  }
-
   &__preview {
-    display: block;
     padding-top: 15px;
-    align-self: center;
   }
 
   &__content {
@@ -30,10 +21,8 @@
   }
 
   &__desc {
-    margin: 0;
     margin-bottom: 63px;
     font-size: 18px;
-    font-weight: 400;
     line-height: 27px;
     color: white;
   }
@@ -41,7 +30,6 @@
   &__btn {
     font-size: 18px;
     line-height: 21px;
-    font-weight: 700;
     border-radius: 20px;
     padding: 24px 75px;
   }

@@ -1,0 +1,21 @@
+section#instructors.instructors
+  .container
+    h2.font-weight-bold.instructors__title Преподаватели курсов
+    ul.row
+      -
+        const instructors = [
+          {name: 'Владимир Петров', img: 'instructor-one', imgAlt: 'Фотография Владимира Петрова', description: 'Лишь непосредственные участники технического прогресса неоднозначны и&nbsp;будут в&nbsp;равной степени предоставлены сами себе'},
+          {name: 'Денис Сергеев', img: 'instructor-two', imgAlt: 'Фотография Дениса Сергеева', description: 'Безусловно, разбавленное изрядной долей эмпатии, рациональное мышление.'},
+          {name: 'Михаил Андреев', img: 'instructor-three', imgAlt: 'Фотография Михаила Андреева', description: 'Ясность нашей позиции очевидна: высокое качество позиционных исследований напрямую зависит от&nbsp;вывода.'},
+          {name: 'Константин Дмитриев', img: 'instructor-four', imgAlt: 'Фотография Константина Дмитриева', description: 'Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что существующая теория, в&nbsp;своём классическом представлении.'}
+        ];
+      each instructor in instructors
+        li.instructors__item.col-xl-3.col-md-6.col-sm-6
+          article.instructors__card
+            picture.w-100.d-block.instructors__preview
+              source(srcset=`img/${instructor.img}-320.jpg`, media='(max-width: 575.98px)')
+              source(srcset=`img/${instructor.img}-576.jpg`, media='(max-width: 767.98px)')
+              source(srcset=`img/${instructor.img}-768.jpg`, media='(max-width: 1199.98px)')
+              img.w-100.overflow-hidden.instructors__img(src=`img/${instructor.img}.jpg`, alt=instructor.imgAlt)
+            h3.font-weight-bold.instructors__name=instructor.name
+            p.instructors__desc!=instructor.description

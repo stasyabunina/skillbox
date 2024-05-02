@@ -1,0 +1,24 @@
+footer.footer
+  ul.footer__socials.d-flex.flex-wrap.justify-content-center
+    - const footerLinks = ['Фейсбук', 'Твиттер', 'Инстаграм', 'Ютуб']
+    each link in footerLinks
+      li.footer__item
+        a.d-flex(href='#' aria-label=link)
+          case link
+            when 'Фейсбук'
+              svg.header__svg
+                use(xlink:href='img/sprite.svg#facebook')
+            when 'Твиттер'
+              svg.header__svg
+                use(xlink:href='img/sprite.svg#twitter')
+            when 'Инстаграм'
+              svg.header__svg
+                use(xlink:href='img/sprite.svg#instagram')
+            when 'Ютуб'
+              svg.header__svg
+                use(xlink:href='img/sprite.svg#youtube')
+  span.d-block.text-center.footer__text
+    | SKILLBOX
+    a.footer__link(href='#')
+      sup.reg &reg;
+    |  2021

@@ -4,11 +4,14 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "gulp build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "me",
   "license": "ISC",
+  "homepage": "https://stasyabunina.github.io/skillbox",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-image": "^6.2.1",
@@ -28,6 +31,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.0.0",
     "gulp-notify": "^4.0.0",
+    "gulp-pug": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^2.0.3",
     "gulp-uglify-es": "^3.0.0"

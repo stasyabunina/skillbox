@@ -1,0 +1,25 @@
+header.header
+  .container
+    .d-flex.justify-content-between.flex-wrap.flex-sm-column.align-items-sm-center.flex-md-row.header__wrapper
+      a.header__logo(href='#', aria-label='Лого')
+        svg.header__svg
+          use(xlink:href='img/sprite.svg#header-logo')
+      nav.d-flex.flex-wrap.nav.header__nav
+        button.nav__close-btn.btn(type='button', aria-label='Закрыть меню')
+          svg.header__svg
+            use(xlink:href='img/sprite.svg#close')
+        ul.d-flex.flex-sm-row.flex-xs-column.nav__list
+          -
+            const links = [
+              {name: 'Главная', href: '#'},
+              {name: 'О&nbsp;нас', href: '#'},
+              {name: 'Преподаватели', href: '#instructors'},
+              {name: 'Курсы', href: '#courses'}
+            ]
+          each link in links
+            li.nav__item
+              a.nav__link(href=link.href)!=link.name
+      button.header__burger.burger.btn(type='button', aria-label='Открыть меню', aria-expanded='false')
+        span.burger__line
+        span.burger__line
+        span.burger__line
